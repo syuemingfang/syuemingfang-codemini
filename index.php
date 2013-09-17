@@ -3,8 +3,8 @@
 
 # Code Mini
   Easy Optimizing Code for HTML, CSS and Javscript. 
-  [Getting Started](http://codemini.cxm.tw)
-  [GitHub project](https://github.com/syuemingfang/syuemingfang-codemini)
+  
+  [Getting Started](http://codemini.cxm.tw) [GitHub project](https://github.com/syuemingfang/syuemingfang-codemini)
 
 ****************************************************************************************************/
 
@@ -18,7 +18,6 @@
 
 ****************************************************************************************************/
 //!
-//!****************************************************************************************************
 //!## Class
 class Codemini{
   //!### Codemini
