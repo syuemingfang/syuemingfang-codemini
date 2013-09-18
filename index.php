@@ -2,25 +2,26 @@
 /*!
 
 # Code Mini
-  Easy Optimizing Code for HTML, CSS and Javscript. 
+  Easy Optimizing Code for HTML, CSS and Javascript. 
   
-  [Getting Started](http://codemini.cxm.tw) [GitHub project](https://github.com/syuemingfang/syuemingfang-codemini)
+  [Getting Started](http://codemini.cxm.tw) [GitHub project](https://github.com/syuemingfang/syuemingfang-codemini) [Documentation](http://comment.cxm.tw/?url=https://raw.github.com/syuemingfang/syuemingfang-codemini/master/comment.json)
 
 ****************************************************************************************************/
 
 /*!
 
-+ Version: 0.1.0.0
++ Version: 0.1.0.3
 + Copyright © 2013 [Syue](mailto:syuemingfang@gmail.com). All rights reserved.
 + Date: *Thu Aug 29 2013 11:16:29 GMT+0800 (Central Standard Time)*
 + Includes:
   + PclZip
 
 ****************************************************************************************************/
-//!
+
+//! 
 //!## Class
-class Codemini{
-  //!### Codemini
+class codemini{
+  //!### codemini
   public $filename_zip;
   public $temp_dir; 
   public function __construct(){
@@ -59,7 +60,9 @@ class Codemini{
     $str=trim($str);
     $str=preg_replace('/\s(?=\s)/', '', $str);
     if($type == 'js'){
-      $str=preg_replace('/(.[a-z)\'\"0-9])\t/', '$1;', $str);
+      $str=preg_replace('/(.[a-z)\}\'\"0-9])\t/', '$1;', $str);
+      $str=preg_replace('/\}([^\,|\;])/s', '};$1', $str);
+      $str=preg_replace('/\s*([\"|\'|:|\,|\{|\}|\)|\()])\s*/s', '$1', $str);
     }
     $str=preg_replace('/[\n\r\t]/', ' ', $str);
     return $str;
@@ -126,7 +129,7 @@ class Codemini{
   }
 }
 
-$main=new Codemini();
+$main=new codemini();
 if(!isset($_REQUEST['zone'])){
   header('Content-type: text/html');
   require('main.html');
